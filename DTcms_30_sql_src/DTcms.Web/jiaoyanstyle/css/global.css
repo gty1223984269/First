@@ -1,0 +1,132 @@
+﻿body {
+    background: none repeat scroll 0 0 #fff;
+    color: #737373;
+    font: 12px/150% "microsoft Yahei","宋体",Arial,Verdana;
+}
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, big, cite, code, del, em, font, img, ins, small, strong, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+    margin: 0;
+    padding: 0;
+}
+ol, ul {
+    list-style: none outside none;
+}
+:focus {
+    outline: 0 none;
+}
+a {
+    color: #737373;
+	text-decoration:none;
+}
+a:hover, a:active {
+    color: #5ca6ec;
+	text-decoration:underline;
+}
+a img {
+    border: 0 none;
+}
+fieldset, img{border:0 none;}
+img {
+    vertical-align: middle;
+}
+table {
+    empty-cells: show;
+	border-collapse:collapse;
+	border-spacing: 0;
+}
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+em {
+    font-style: normal;
+}
+button::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border: medium none;
+    padding: 0;
+}
+
+select, input, button, textarea {
+     font: 100% "microsoft Yahei",Tahoma,Helvetica,Arial,sans-serif;
+	 padding: 0;
+}
+
+input[type="checkbox"], input[type="radio"] {
+	box-sizing: border-box;
+    padding: 0;
+	margin:0;
+	*height: 13px;
+    *width: 13px;
+}
+input {
+    vertical-align: middle;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    *overflow: visible;
+}
+button[disabled],
+input[disabled] {
+    cursor: default;
+}
+h1,h2,h3,h4{ font-weight: 400;}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.fn {
+    float: none;
+}
+.al {
+    text-align: left;
+}
+.ac {
+    text-align: center;
+}
+.ar {
+    text-align: right;
+}
+.hidden{ display:none;}
+.clr {
+    clear: both;
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-table;
+}
+.clearfix {
+    display: block;
+}
+* + html .clearfix {
+    min-height: 1%;
+}
+.mt{
+    margin-bottom: 10px;
+}
+.mr{ margin-right: 10px;}
+.ml{ margin-left: 10px;}
+
+.font14{ font-size: 14px;}
+.font16{ font-size: 16px;}
+.font18{ font-size: 18px;}
+.font22{ font-size: 22px;}
+.font24{ font-size: 24px;}
+

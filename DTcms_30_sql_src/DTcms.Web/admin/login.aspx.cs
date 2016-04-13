@@ -1,0 +1,106 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using DTcms.Common;
+using System.Security.Cryptography;
+using System.Text;
+using DTcms.BLL;
+using System.Data;
+namespace DTcms.Web.admin
+{
+    public partial class login : System.Web.UI.Page
+    {
+        public string  City = "0";
+        public string  School = "0";
+      DTcms.BLL.manager_role role= new DTcms.BLL.manager_role();
+       
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!Page.IsPostBack)
+            {
+                txtUserName.Text = Utils.GetCookie("DTRememberName");
+            }
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string userName = txtUserName.Text.Trim();
+            string userPwd = txtPassword.Text.Trim();
+            Session["user"] = userName.ToString();
+           
+            DataSet ScId = role.geSchoolCityId(userName);
+            foreach (DataRow dr in ScId.Tables[0].Rows)
+            {
+                City = dr["CityId"].ToString();
+                School = dr["SchoolId"].ToString();
+                Session["City"] = City;
+                Session["School"] = School;
+            }
+       DataSet roletype = role.getrole(userName);
+    foreach (DataRow dr in roletype.Tables[0].Rows)
+    {
+        string type = dr["role_id"].ToString();
+        if (type == "3")//教师
+        {
+            Session["type"] = type.ToString();
+
+        }
+        if (type == "4")//校教研
+        {
+            Session["type"] = type.ToString();//市教研
+
+        }
+        if (type == "5")
+        {
+            Session["type"] = type.ToString();
+        
+        }
+       
+    }
+
+            if (userName.Equals("") || userPwd.Equals(""))
+            {
+                msgtip.InnerHtml = "请输入用户名或密码"; 
+                return;
+            }
+            if (Session["AdminLoginSun"] == null)
+            {
+                Session["AdminLoginSun"] = 1;
+            }
+            else
+            {
+                Session["AdminLoginSun"] = Convert.ToInt32(Session["AdminLoginSun"]) + 1;
+            }
+            //判断登录错误次数
+            if (Session["AdminLoginSun"] != null && Convert.ToInt32(Session["AdminLoginSun"]) > 5)
+            {
+                msgtip.InnerHtml = "错误超过5次，关闭浏览器重新登录！";
+                return;
+            }
+            BLL.manager bll = new BLL.manager();
+            Model.manager model = bll.GetModel(userName, userPwd, true);
+            if (model == null)
+            {
+                msgtip.InnerHtml = "用户名或密码有误，请重试！";
+                return;
+            }
+            Session[DTKeys.SESSION_ADMIN_INFO] = model;
+            Session.Timeout = 45;
+            //写入登录日志
+            Model.siteconfig siteConfig = new BLL.siteconfig().loadConfig();
+            if (siteConfig.logstatus > 0)
+            {
+                new BLL.manager_log().Add(model.id, model.user_name, DTEnums.ActionEnum.Login.ToString(), "用户登录");
+            }
+            //写入Cookies
+            Utils.WriteCookie("DTRememberName", model.user_name, 14400);
+            Utils.WriteCookie("AdminName", "DTcms", model.user_name);
+            Utils.WriteCookie("AdminPwd", "DTcms", model.password);
+            Response.Redirect("index.aspx");
+            return;
+        }
+
+    }
+}
