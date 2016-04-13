@@ -67,6 +67,8 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\activity\activity_edit.aspx" />
+    <Content Include="admin\activity\activity_list.aspx" />
     <Content Include="admin\center.aspx" />
     <Content Include="admin\dialog\dialog_attach.aspx" />
     <Content Include="admin\article\category_edit.aspx" />
@@ -519,6 +521,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\activity\activity_edit.aspx.cs">
+      <DependentUpon>activity_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\activity\activity_edit.aspx.designer.cs">
+      <DependentUpon>activity_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\activity\activity_list.aspx.cs">
+      <DependentUpon>activity_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\activity\activity_list.aspx.designer.cs">
+      <DependentUpon>activity_list.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\center.aspx.cs">
       <DependentUpon>center.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
