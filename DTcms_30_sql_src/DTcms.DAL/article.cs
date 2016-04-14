@@ -204,65 +204,7 @@ namespace DTcms.DAL
 
             List<CommandInfo> sqllist = new List<CommandInfo>();
             CommandInfo cmd = new CommandInfo(strSql.ToString(), parameters);
-            sqllist.Add(cmd);
-
-            //Ìí¼ÓÀ©Õ¹×Ö¶Î
-            //StringBuilder strSql2 = new StringBuilder();
-            //StringBuilder strFieldName = new StringBuilder(); 
-            //StringBuilder strFieldVar = new StringBuilder(); 
-            //SqlParameter[] parameters2 = new SqlParameter[model.fields.Count + 1];
-            //int i = 1;
-            //strFieldName.Append("article_id");
-            //strFieldVar.Append("@article_id");
-            //parameters2[0] = new SqlParameter("@article_id", SqlDbType.Int, 4);
-            //parameters2[0].Direction = ParameterDirection.InputOutput;
-            //foreach (KeyValuePair<string, string> kvp in model.fields)
-            //{
-            //    strFieldName.Append("," + kvp.Key);
-            //    strFieldVar.Append(",@" + kvp.Key);
-            //    if (kvp.Value.Length <= 4000)
-            //    {
-            //        parameters2[i] = new SqlParameter("@" + kvp.Key, SqlDbType.NVarChar, kvp.Value.Length);
-            //    }
-            //    else
-            //    {
-            //        parameters2[i] = new SqlParameter("@" + kvp.Key, SqlDbType.NText);
-            //    }
-                
-            //    parameters2[i].Value = kvp.Value;
-            //    i++;
-            //}
-            //strSql2.Append("insert into " + databaseprefix + "article_attribute_value(");
-            //strSql2.Append(strFieldName.ToString() + ")");
-            //strSql2.Append(" values (");
-            //strSql2.Append(strFieldVar.ToString() + ")");
-            //cmd = new CommandInfo(strSql2.ToString(), parameters2);
-            //sqllist.Add(cmd);
-
-            //Í¼Æ¬Ïà²á
-         //   if (model.albums != null)
-         //   {
-         //       StringBuilder strSql3;
-         //       foreach (Model.article_albums modelt in model.albums)
-         //       {
-         //           strSql3 = new StringBuilder();
-         //           strSql3.Append("insert into " + databaseprefix + "article_albums(");
-         //           strSql3.Append("article_id,thumb_path,original_path,remark)");
-         //           strSql3.Append(" values (");
-         //           strSql3.Append("@article_id,@thumb_path,@original_path,@remark)");
-         //           SqlParameter[] parameters3 = {
-					    //new SqlParameter("@article_id", SqlDbType.Int,4),
-					    //new SqlParameter("@thumb_path", SqlDbType.NVarChar,255),
-					    //new SqlParameter("@original_path", SqlDbType.NVarChar,255),
-					    //new SqlParameter("@remark", SqlDbType.NVarChar,500)};
-         //           parameters3[0].Direction = ParameterDirection.InputOutput;
-         //           parameters3[1].Value = modelt.thumb_path;
-         //           parameters3[2].Value = modelt.original_path;
-         //           parameters3[3].Value = modelt.remark;
-         //           cmd = new CommandInfo(strSql3.ToString(), parameters3);
-         //           sqllist.Add(cmd);
-         //       }
-         //   }
+            sqllist.Add(cmd);           
 
             //ÎÄÕÂ¸½¼þ
             if (model.attach != null)
@@ -430,35 +372,6 @@ namespace DTcms.DAL
                         parameters[25].Value = model.id;
                         parameters[26].Value = model.Sstatus;
                         DbHelperSQL.ExecuteSql(conn, trans, strSql.ToString(), parameters);
-
-                        //ÐÞ¸ÄÀ©Õ¹×Ö¶Î
-                        //if (model.fields.Count > 0)
-                        //{
-                        //    StringBuilder strSql2 = new StringBuilder();
-                        //    StringBuilder strFieldName = new StringBuilder(); //×Ö¶ÎÁÐ±í
-                        //    SqlParameter[] parameters2 = new SqlParameter[model.fields.Count + 1];
-                        //    int i = 0;
-                        //    foreach (KeyValuePair<string, string> kvp in model.fields)
-                        //    {
-                        //        strFieldName.Append(kvp.Key + "=@" + kvp.Key + ",");
-                        //        if (kvp.Value.Length <= 4000)
-                        //        {
-                        //            parameters2[i] = new SqlParameter("@" + kvp.Key, SqlDbType.NVarChar, kvp.Value.Length);
-                        //        }
-                        //        else
-                        //        {
-                        //            parameters2[i] = new SqlParameter("@" + kvp.Key, SqlDbType.NText);
-                        //        }
-                        //        parameters2[i].Value = kvp.Value;
-                        //        i++;
-                        //    }
-                        //    strSql2.Append("update " + databaseprefix + "article_attribute_value set ");
-                        //    strSql2.Append(Utils.DelLastComma(strFieldName.ToString()));
-                        //    strSql2.Append(" where article_id=@article_id");
-                        //    parameters2[i] = new SqlParameter("@article_id", SqlDbType.Int, 4);
-                        //    parameters2[i].Value = model.id;
-                        //    DbHelperSQL.ExecuteSql(conn, trans, strSql2.ToString(), parameters2);
-                        //}
 
                         //É¾³ýÒÑÉ¾³ýµÄÍ¼Æ¬
                         new article_albums(databaseprefix).DeleteList(conn, trans, model.albums, model.id);
