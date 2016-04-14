@@ -26,6 +26,7 @@
 </div>
 <!--/导航栏-->
 
+
 <!--工具栏-->
 <div class="toolbar-wrap">
   <div id="floatHead" class="toolbar">
@@ -35,11 +36,11 @@
         <li><a class="all" href="javascript:;" onclick="checkAll(this);"><i></i><span>全选</span></a></li>
         <li><asp:LinkButton ID="btnDelete" runat="server" CssClass="del" OnClientClick="return ExePostBack('btnDelete');" onclick="btnDelete_Click"><i></i><span>删除</span></asp:LinkButton></li>
       </ul>
-        <div class="menu-list">
+       <%-- <div class="menu-list">
             <div class="rule-single-select">
                 <asp:DropDownList ID="ddlTypeId" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlGroupId_SelectedIndexChanged"></asp:DropDownList>
             </div>
-        </div>
+        </div>--%>
     </div>
     <div class="r-list">
       <asp:TextBox ID="txtKeywords" runat="server" CssClass="keyword" />
@@ -76,7 +77,6 @@
     </td>
     <td><%#Eval("click")%></td>
     <td><%#Convert.ToInt32(Eval("is_lock"))==0 ? "显示":"隐藏"%></td>
-    <td><%#GetSpace(int.Parse(Eval("type").ToString()))%></td>
     <td><%#string.Format("{0:g}", Eval("add_time"))%></td>
     <td align="center"><a href="activity_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>">修改</a></td>
   </tr>

@@ -75,3 +75,14 @@ D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.DAL\bin\Debug\DTcms.Model
 D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.DAL\obj\Debug\DTcms.DAL.csprojResolveAssemblyReference.cache
 D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.DAL\obj\Debug\DTcms.DAL.dll
 D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.DAL\obj\Debug\DTcms.DAL.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DAL\bin\Debug\DTcms.DAL.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DAL\bin\Debug\DTcms.DAL.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DAL\bin\Debug\DTcms.Common.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DAL\bin\Debug\DTcms.DBUtility.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DAL\bin\Debug\DTcms.Model.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DAL\bin\Debug\DTcms.Common.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DAL\bin\Debug\DTcms.DBUtility.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DAL\bin\Debug\DTcms.Model.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DAL\obj\Debug\DTcms.DAL.csprojResolveAssemblyReference.cache
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DAL\obj\Debug\DTcms.DAL.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DAL\obj\Debug\DTcms.DAL.pdb

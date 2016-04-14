@@ -32,3 +32,7 @@ D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.Common\bin\Debug\DTcms.Co
 D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.Common\bin\Debug\DTcms.Common.pdb
 D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.Common\obj\Debug\DTcms.Common.dll
 D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.Common\obj\Debug\DTcms.Common.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.Common\bin\Debug\DTcms.Common.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.Common\bin\Debug\DTcms.Common.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.Common\obj\Debug\DTcms.Common.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.Common\obj\Debug\DTcms.Common.pdb

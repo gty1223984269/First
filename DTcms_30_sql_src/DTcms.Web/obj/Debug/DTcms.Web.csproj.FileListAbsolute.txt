@@ -154,7 +154,6 @@ D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.Web\bin\DTcms.DBUtility.p
 D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.Web\obj\Debug\DTcms.Web.csprojResolveAssemblyReference.cache
 D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.Web\obj\Debug\DTcms.Web.dll
 D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.Web\obj\Debug\DTcms.Web.pdb
-D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.Web\bin\DTcms.Web.dll.config
 D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.Web\bin\DTcms.Web.dll
 D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.Web\bin\DTcms.Web.pdb
 D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.Web\bin\DTcms.BLL.dll
@@ -172,3 +171,4 @@ D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.Web\bin\DTcms.DBUti
 D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.Web\obj\Debug\DTcms.Web.csprojResolveAssemblyReference.cache
 D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.Web\obj\Debug\DTcms.Web.dll
 D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.Web\obj\Debug\DTcms.Web.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.Web\bin\DTcms.Web.dll.config

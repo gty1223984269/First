@@ -89,3 +89,16 @@ D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.BLL\bin\Debug\DTcms.Model
 D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.BLL\obj\Debug\DTcms.BLL.csprojResolveAssemblyReference.cache
 D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.BLL\obj\Debug\DTcms.BLL.dll
 D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.BLL\obj\Debug\DTcms.BLL.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.BLL\bin\Debug\DTcms.BLL.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.BLL\bin\Debug\DTcms.BLL.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.BLL\bin\Debug\DTcms.Common.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.BLL\bin\Debug\DTcms.DAL.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.BLL\bin\Debug\DTcms.DBUtility.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.BLL\bin\Debug\DTcms.Model.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.BLL\bin\Debug\DTcms.Common.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.BLL\bin\Debug\DTcms.DAL.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.BLL\bin\Debug\DTcms.DBUtility.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.BLL\bin\Debug\DTcms.Model.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.BLL\obj\Debug\DTcms.BLL.csprojResolveAssemblyReference.cache
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.BLL\obj\Debug\DTcms.BLL.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.BLL\obj\Debug\DTcms.BLL.pdb

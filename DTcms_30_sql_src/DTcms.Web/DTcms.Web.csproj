@@ -372,6 +372,7 @@
     <Content Include="editor\themes\qq\qq.css" />
     <Content Include="editor\themes\simple\simple.css" />
     <Content Include="favicon.ico" />
+    <Content Include="Html\Activity.aspx" />
     <Content Include="index.aspx" />
     <Content Include="jiaoyanstyle\css\global.css" />
     <Content Include="jiaoyanstyle\css\layout.css" />
@@ -510,15 +511,6 @@
     <Content Include="scripts\swfupload\swfupload.swf" />
     <Content Include="tools\download.ashx" />
     <Content Include="tools\submit_ajax.ashx" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin\activity\activity_edit.aspx.cs">
@@ -881,6 +873,13 @@
       <DependentUpon>user_sms.aspx</DependentUpon>
     </Compile>
     <Compile Include="dt_article.cs" />
+    <Compile Include="Html\Activity.aspx.cs">
+      <DependentUpon>Activity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Html\Activity.aspx.designer.cs">
+      <DependentUpon>Activity.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tools\admin_ajax.ashx.cs">
       <DependentUpon>admin_ajax.ashx</DependentUpon>
@@ -928,14 +927,13 @@
   <ItemGroup>
     <Folder Include="aspx\mobile\" />
     <Folder Include="aspx\plugin\" />
-    <Folder Include="html\" />
     <Folder Include="images\" />
     <Folder Include="jiaoyanstyle\.sass-cache\317a6d2e04cab57eec23ce7a90ab408555f15d92\" />
     <Folder Include="jiaoyanstyle\upload\" />
     <Folder Include="obj\Debug\Package\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="plugins\" />
-    <Folder Include="upload\" />
+    <Folder Include="upload\201604\14\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="tools\admin_ajax.ashx" />
@@ -980,6 +978,13 @@
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\DTcms.Web.csprojResolveAssemblyReference.cache" />
     <Content Include="obj\Debug\ResolveAssemblyReference.cache" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

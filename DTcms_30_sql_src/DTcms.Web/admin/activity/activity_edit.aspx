@@ -113,14 +113,8 @@
             </div>
         </div>
         <div class="tab-content">
-            <dl>
-                <dt>显示位置</dt>
-                <dd>
-                    <div class="rule-single-select">
-                    <asp:DropDownList id="ddlTypeId" runat="server" datatype="*" errormsg="请选择" sucmsg=" "></asp:DropDownList>
-                    </div>
-                </dd>
-            </dl>
+         
+                
             <dl>
                 <dt>标题</dt>
                 <dd>
@@ -171,8 +165,8 @@
         <!--工具栏-->
         <div class="page-footer">
             <div class="btn-list">
-                <%--<asp:Button ID="btnSubmit" runat="server" Text="提交保存" CssClass="btn" OnClick="btnSubmit_Click" />
-                <input name="btnReturn" type="button" value="返回上一页" class="btn yellow" onclick="javascript: history.back(-1);" />--%>
+                <asp:Button ID="btnSubmit" runat="server" Text="提交保存" CssClass="btn" OnClick="btnSubmit_Click" />
+                <input name="btnReturn" type="button" value="返回上一页" class="btn yellow" onclick="javascript: history.back(-1);" />
             </div>
             <div class="clear"></div>
         </div>

@@ -47,3 +47,10 @@ D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.DBUtility\bin\Debug\DTcms
 D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.csprojResolveAssemblyReference.cache
 D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
 D:\PerSon\MyProject\PictureShow\DTcms_30_sql_src\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DBUtility\bin\Debug\DTcms.DBUtility.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DBUtility\bin\Debug\DTcms.Common.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DBUtility\bin\Debug\DTcms.Common.pdb
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.csprojResolveAssemblyReference.cache
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.dll
+D:\PerSon\MyProject\PictureShow\First\DTcms_30_sql_src\DTcms.DBUtility\obj\Debug\DTcms.DBUtility.pdb
