@@ -31,8 +31,8 @@ namespace DTcms.Web.admin.article
             this.category_id = DTRequest.GetQueryInt("category_id");
             this.keywords = DTRequest.GetQueryString("keywords");
             this.property = DTRequest.GetQueryString("property");
-            this.City = Session["City"].ToString();
-            this.School = Session["School"].ToString();
+            //this.City = Session["City"].ToString();
+            //this.School = Session["School"].ToString();
             try
             {
                 this.user = Session["user"].ToString();
@@ -63,24 +63,24 @@ namespace DTcms.Web.admin.article
             BLL.article_category bll = new BLL.article_category();
             DataTable dt = bll.GetList(0, _channel_id);
 
-            this.ddlCategoryId.Items.Clear();
-            this.ddlCategoryId.Items.Add(new ListItem("所有类别", ""));
+            //this.ddlCategoryId.Items.Clear();
+            //this.ddlCategoryId.Items.Add(new ListItem("所有类别", ""));
             foreach (DataRow dr in dt.Rows)
             {
                 string Id = dr["id"].ToString();
                 int ClassLayer = int.Parse(dr["class_layer"].ToString());
                 string Title = dr["title"].ToString().Trim();
 
-                if (ClassLayer == 1)
-                {
-                    this.ddlCategoryId.Items.Add(new ListItem(Title, Id));
-                }
-                else
-                {
-                    Title = "├ " + Title;
-                    Title = Utils.StringOfChar(ClassLayer - 1, "　") + Title;
-                    this.ddlCategoryId.Items.Add(new ListItem(Title, Id));
-                }
+                //if (ClassLayer == 1)
+                //{
+                //    this.ddlCategoryId.Items.Add(new ListItem(Title, Id));
+                //}
+                //else
+                //{
+                //    Title = "├ " + Title;
+                //    Title = Utils.StringOfChar(ClassLayer - 1, "　") + Title;
+                //    this.ddlCategoryId.Items.Add(new ListItem(Title, Id));
+                //}
             }
         }
         #endregion
@@ -89,12 +89,12 @@ namespace DTcms.Web.admin.article
         private void RptBind(string Type,string City,string School,string user,int _channel_id, int _category_id,string _strWhere, string _orderby)
         {
             this.page = DTRequest.GetQueryInt("page", 1);
-            if (this.category_id > 0)
-            {
-                this.ddlCategoryId.SelectedValue = _category_id.ToString();
-            }
-            this.ddlProperty.SelectedValue = this.property;
-            this.txtKeywords.Text = this.keywords;
+            //if (this.category_id > 0)
+            //{
+            //    this.ddlCategoryId.SelectedValue = _category_id.ToString();
+            //}
+            //this.ddlProperty.SelectedValue = this.property;
+            //this.txtKeywords.Text = this.keywords;
             //图表或列表显示
             BLL.article bll = new BLL.article();
             switch (this.prolistview)
@@ -223,21 +223,7 @@ namespace DTcms.Web.admin.article
                 this.channel_id.ToString(), this.category_id.ToString(), txtKeywords.Text, this.property));
         }
 
-        //筛选类别
-        protected void ddlCategoryId_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Response.Redirect(Utils.CombUrlTxt("article_list.aspx", "channel_id={0}&category_id={1}&keywords={2}&property={3}",
-                this.channel_id.ToString(), ddlCategoryId.SelectedValue, this.keywords, this.property));
-        }
-
-        //筛选属性
-        protected void ddlProperty_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Response.Redirect(Utils.CombUrlTxt("article_list.aspx", "channel_id={0}&category_id={1}&keywords={2}&property={3}",
-               this.channel_id.ToString(), this.category_id.ToString(), this.keywords, ddlProperty.SelectedValue));
-        }
-
-        //设置文字列表显示
+       
         protected void lbtnViewTxt_Click(object sender, EventArgs e)
         {
             Utils.WriteCookie("article_list_view", "Txt", 14400);

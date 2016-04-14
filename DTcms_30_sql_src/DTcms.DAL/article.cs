@@ -432,33 +432,33 @@ namespace DTcms.DAL
                         DbHelperSQL.ExecuteSql(conn, trans, strSql.ToString(), parameters);
 
                         //修改扩展字段
-                        if (model.fields.Count > 0)
-                        {
-                            StringBuilder strSql2 = new StringBuilder();
-                            StringBuilder strFieldName = new StringBuilder(); //字段列表
-                            SqlParameter[] parameters2 = new SqlParameter[model.fields.Count + 1];
-                            int i = 0;
-                            foreach (KeyValuePair<string, string> kvp in model.fields)
-                            {
-                                strFieldName.Append(kvp.Key + "=@" + kvp.Key + ",");
-                                if (kvp.Value.Length <= 4000)
-                                {
-                                    parameters2[i] = new SqlParameter("@" + kvp.Key, SqlDbType.NVarChar, kvp.Value.Length);
-                                }
-                                else
-                                {
-                                    parameters2[i] = new SqlParameter("@" + kvp.Key, SqlDbType.NText);
-                                }
-                                parameters2[i].Value = kvp.Value;
-                                i++;
-                            }
-                            strSql2.Append("update " + databaseprefix + "article_attribute_value set ");
-                            strSql2.Append(Utils.DelLastComma(strFieldName.ToString()));
-                            strSql2.Append(" where article_id=@article_id");
-                            parameters2[i] = new SqlParameter("@article_id", SqlDbType.Int, 4);
-                            parameters2[i].Value = model.id;
-                            DbHelperSQL.ExecuteSql(conn, trans, strSql2.ToString(), parameters2);
-                        }
+                        //if (model.fields.Count > 0)
+                        //{
+                        //    StringBuilder strSql2 = new StringBuilder();
+                        //    StringBuilder strFieldName = new StringBuilder(); //字段列表
+                        //    SqlParameter[] parameters2 = new SqlParameter[model.fields.Count + 1];
+                        //    int i = 0;
+                        //    foreach (KeyValuePair<string, string> kvp in model.fields)
+                        //    {
+                        //        strFieldName.Append(kvp.Key + "=@" + kvp.Key + ",");
+                        //        if (kvp.Value.Length <= 4000)
+                        //        {
+                        //            parameters2[i] = new SqlParameter("@" + kvp.Key, SqlDbType.NVarChar, kvp.Value.Length);
+                        //        }
+                        //        else
+                        //        {
+                        //            parameters2[i] = new SqlParameter("@" + kvp.Key, SqlDbType.NText);
+                        //        }
+                        //        parameters2[i].Value = kvp.Value;
+                        //        i++;
+                        //    }
+                        //    strSql2.Append("update " + databaseprefix + "article_attribute_value set ");
+                        //    strSql2.Append(Utils.DelLastComma(strFieldName.ToString()));
+                        //    strSql2.Append(" where article_id=@article_id");
+                        //    parameters2[i] = new SqlParameter("@article_id", SqlDbType.Int, 4);
+                        //    parameters2[i].Value = model.id;
+                        //    DbHelperSQL.ExecuteSql(conn, trans, strSql2.ToString(), parameters2);
+                        //}
 
                         //删除已删除的图片
                         new article_albums(databaseprefix).DeleteList(conn, trans, model.albums, model.id);
@@ -637,16 +637,16 @@ namespace DTcms.DAL
             //取得附件MODEL
             List<Model.article_attach> attachList = new DAL.article_attach(databaseprefix).GetList(id);
 
-            //删除扩展字段表
-            StringBuilder strSql1 = new StringBuilder();
-            strSql1.Append("delete from " + databaseprefix + "article_attribute_value ");
-            strSql1.Append(" where article_id=@article_id ");
+           // 删除扩展字段表
+                   StringBuilder strSql1 = new StringBuilder();
+            //strSql1.Append("delete from " + databaseprefix + "article_attribute_value ");
+            //strSql1.Append(" where article_id=@article_id ");
             SqlParameter[] parameters1 = {
-					new SqlParameter("@article_id", SqlDbType.Int,4)};
+            new SqlParameter("@article_id", SqlDbType.Int,4)};
             parameters1[0].Value = id;
             List<CommandInfo> sqllist = new List<CommandInfo>();
             CommandInfo cmd = new CommandInfo(strSql1.ToString(), parameters1);
-            sqllist.Add(cmd);
+            //sqllist.Add(cmd);
 
             //删除图片相册
             StringBuilder strSql2 = new StringBuilder();
@@ -806,43 +806,43 @@ namespace DTcms.DAL
                 }
                 #endregion
 
-                #region 扩展字段信息==================
-                //查询该频道的扩展字段名称
-                DataTable dt = new article_attribute_field(databaseprefix).GetList(model.channel_id, "").Tables[0];
-                if (dt.Rows.Count > 0)
-                {
-                    StringBuilder sb = new StringBuilder();
-                    foreach(DataRow dr in dt.Rows)
-                    {
-                        sb.Append(dr["name"].ToString() + ",");
-                    }
-                    StringBuilder strSql2 = new StringBuilder();
-                    strSql2.Append("select top 1 " + Utils.DelLastComma(sb.ToString()) + " from " + databaseprefix + "article_attribute_value ");
-                    strSql2.Append(" where article_id=@article_id ");
-                    SqlParameter[] parameters2 = {
-					    new SqlParameter("@article_id", SqlDbType.Int,4)};
-                    parameters2[0].Value = id;
+         //       #region 扩展字段信息==================
+         //       //查询该频道的扩展字段名称
+         //       DataTable dt = new article_attribute_field(databaseprefix).GetList(model.channel_id, "").Tables[0];
+         //       if (dt.Rows.Count > 0)
+         //       {
+         //           StringBuilder sb = new StringBuilder();
+         //           foreach(DataRow dr in dt.Rows)
+         //           {
+         //               sb.Append(dr["name"].ToString() + ",");
+         //           }
+         //           StringBuilder strSql2 = new StringBuilder();
+         //           strSql2.Append("select top 1 " + Utils.DelLastComma(sb.ToString()) + " from " + databaseprefix + "article_attribute_value ");
+         //           strSql2.Append(" where article_id=@article_id ");
+         //           SqlParameter[] parameters2 = {
+					    //new SqlParameter("@article_id", SqlDbType.Int,4)};
+         //           parameters2[0].Value = id;
 
-                    DataSet ds2 = DbHelperSQL.Query(strSql2.ToString(), parameters2);
-                    if (ds2.Tables[0].Rows.Count > 0)
-                    {
-                        Dictionary<string, string> dic = new Dictionary<string, string>();
-                        foreach (DataRow dr in dt.Rows)
-                        {
-                            if (ds2.Tables[0].Rows[0][dr["name"].ToString()] != null)
-                            {
-                                dic.Add(dr["name"].ToString(), ds2.Tables[0].Rows[0][dr["name"].ToString()].ToString());
-                            }
-                            else
-                            {
-                                dic.Add(dr["name"].ToString(), "");
-                            }
-                        }
-                        model.fields = dic;
-                    }
-                }
+         //           DataSet ds2 = DbHelperSQL.Query(strSql2.ToString(), parameters2);
+         //           if (ds2.Tables[0].Rows.Count > 0)
+         //           {
+         //               Dictionary<string, string> dic = new Dictionary<string, string>();
+         //               foreach (DataRow dr in dt.Rows)
+         //               {
+         //                   if (ds2.Tables[0].Rows[0][dr["name"].ToString()] != null)
+         //                   {
+         //                       dic.Add(dr["name"].ToString(), ds2.Tables[0].Rows[0][dr["name"].ToString()].ToString());
+         //                   }
+         //                   else
+         //                   {
+         //                       dic.Add(dr["name"].ToString(), "");
+         //                   }
+         //               }
+         //               model.fields = dic;
+         //           }
+         //       }
                 
-                #endregion
+         //       #endregion
 
                 //相册信息
                 model.albums = new article_albums(databaseprefix).GetList(id);

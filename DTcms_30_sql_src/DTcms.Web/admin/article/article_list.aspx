@@ -74,7 +74,7 @@
         <li><a class="all" href="javascript:;" onclick="checkAll(this);"><i></i><span>全选</span></a></li>
         <li><asp:LinkButton ID="btnDelete" runat="server" CssClass="del" OnClientClick="return ExePostBack('btnDelete');" onclick="btnDelete_Click"><i></i><span>删除</span></asp:LinkButton></li>
       </ul>
-      <div class="menu-list">
+     <%-- <div class="menu-list">
         <div class="rule-single-select">
           <asp:DropDownList ID="ddlCategoryId" runat="server" AutoPostBack="True" onselectedindexchanged="ddlCategoryId_SelectedIndexChanged"></asp:DropDownList>
         </div>
@@ -88,7 +88,7 @@
             <asp:ListItem Value="isSlide">幻灯片</asp:ListItem>
           </asp:DropDownList>
         </div>
-      </div>
+      </div>--%>
     </div>
     <div class="r-list">
       <asp:TextBox ID="txtKeywords" runat="server" CssClass="keyword" />

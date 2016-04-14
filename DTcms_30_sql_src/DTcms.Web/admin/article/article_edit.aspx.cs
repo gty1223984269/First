@@ -65,8 +65,8 @@ namespace DTcms.Web.admin.article
                
                 if (action == DTEnums.ActionEnum.Edit.ToString()) //修改
                 {
-                    //ShowInfo(this.id);
-                  
+                    ShowInfo(this.id);
+
                 }
             }
         }
@@ -318,177 +318,64 @@ namespace DTcms.Web.admin.article
         #endregion
 
         #region 绑定类别=================================
-       
+
         #endregion
-       
+
         #region 赋值操作=================================
-        //private void ShowInfo(int _id)
-        //{
-        //    BLL.article bll = new BLL.article();
-        //    txtCallIndex.Text = model.call_index;
-        //    txtTitle.Text = model.title;
-        //    txtLinkUrl.Text = model.link_url;
-        //    //不是相册图片就绑定
-        //    string filename = model.img_url.Substring(model.img_url.LastIndexOf("/") + 1);
-        //    if (!filename.StartsWith("thumb_"))
-        //    {
-        //        txtImgUrl.Text = model.img_url;
-        //    }
-        //    txtSeoTitle.Text = model.seo_title;
-        //    txtSeoKeywords.Text = model.seo_keywords;
-        //    txtSeoDescription.Text = model.seo_description;
-        //    txtZhaiyao.Text = model.zhaiyao;
-        //    txtContent.Value = model.content;
-        //    txtSortId.Text = model.sort_id.ToString();
-        //    txtClick.Text = model.click.ToString();
-        //    RBschool.SelectedValue = model.Sstatus.ToString();
-        //    RBcity.SelectedValue = model.status.ToString();
-        //    if (model.Sstatus == 1)
-        //    {
-        //        rblStatus.Items.FindByValue("0").Text = "校级审核通过";
+        private void ShowInfo(int _id)
+        {
+            BLL.article bll = new BLL.article();
+         Model.article  model= bll.GetModel(_id);
+            txtCallIndex.Text = model.call_index;
+            txtTitle.Text = model.title;
+            txtLinkUrl.Text = model.link_url;
+            //不是相册图片就绑定
+            string filename = model.img_url.Substring(model.img_url.LastIndexOf("/") + 1);
+            if (!filename.StartsWith("thumb_"))
+            {
+                txtImgUrl.Text = model.img_url;
+            }
+            txtSeoTitle.Text = model.seo_title;
+            txtSeoKeywords.Text = model.seo_keywords;
+            txtSeoDescription.Text = model.seo_description;
+            txtZhaiyao.Text = model.zhaiyao;
+            txtContent.Value = model.content;
+            txtSortId.Text = model.sort_id.ToString();
+            txtClick.Text = model.click.ToString();
+         
+
             
-        //    }
-        //    if (model.Sstatus == 0)
-        //    {
-        //        rblStatus.Items.FindByValue("0").Text = "待校级审核";
 
-        //    }
-        //    if (model.status == 1)
-        //    {
-        //        rblStatus.Items.FindByValue("1").Text = "市级审核通过";
-
-        //    }
-        //    if (model.status == 0)
-        //    {
-        //        rblStatus.Items.FindByValue("1").Text = "待市级审核";
-
-        //    }
-        
-        
-        //    //rblStatus.Items.FindByValue("1").Text = model.status.ToString();
-
-        //    txtAddTime.Text = model.add_time.ToString("yyyy-MM-dd HH:mm:ss");
-        //    if (model.is_msg == 1)
-        //    {
-        //        cblItem.Items[0].Selected = true;
-        //    }
-        //    if (model.is_top == 1)
-        //    {
-        //        cblItem.Items[1].Selected = true;
-        //    }
-        //    if (model.is_red == 1)
-        //    {
-        //        cblItem.Items[2].Selected = true;
-        //    }
-        //    if (model.is_hot == 1)
-        //    {
-        //        cblItem.Items[3].Selected = true;
-        //    }
-        //    if (model.is_slide == 1)
-        //    {
-        //        cblItem.Items[4].Selected = true;
-        //    }
-        //    //扩展字段赋值
-        //    List<Model.article_attribute_field> ls1 = new BLL.article_attribute_field().GetModelList(this.channel_id, "");
-        //    foreach (Model.article_attribute_field modelt1 in ls1)
-        //    {
-        //        switch (modelt1.control_type)
-        //        {
-        //            case "single-text": //单行文本
-        //                TextBox txtControl = FindControl("field_control_" + modelt1.name) as TextBox;
-        //                if (txtControl != null && model.fields.ContainsKey(modelt1.name))
-        //                {
-        //                    if (modelt1.is_password == 1)
-        //                    {
-        //                        txtControl.Attributes.Add("value", model.fields[modelt1.name]);
-        //                    }
-        //                    else
-        //                    {
-        //                        txtControl.Text = model.fields[modelt1.name];
-        //                    }
-        //                }
-        //                break;
-        //            case "multi-text": //多行文本
-        //                goto case "single-text";
-        //            case "editor": //编辑器
-        //                HtmlTextArea txtAreaControl = FindControl("field_control_" + modelt1.name) as HtmlTextArea;
-        //                if (txtAreaControl != null && model.fields.ContainsKey(modelt1.name))
-        //                {
-        //                    txtAreaControl.Value = model.fields[modelt1.name];
-        //                }
-        //                break;
-        //            case "images": //图片上传
-        //                goto case "single-text";
-        //            case "number": //数字
-        //                goto case "single-text";
-        //            case "checkbox": //复选框
-        //                CheckBox cbControl = FindControl("field_control_" + modelt1.name) as CheckBox;
-        //                if (cbControl != null && model.fields.ContainsKey(modelt1.name))
-        //                {
-        //                    if (model.fields[modelt1.name] == "1")
-        //                    {
-        //                        cbControl.Checked = true;
-        //                    }
-        //                    else
-        //                    {
-        //                        cbControl.Checked = false;
-        //                    }
-        //                }
-        //                break;
-        //            case "multi-radio": //多项单选
-        //                RadioButtonList rblControl = FindControl("field_control_" + modelt1.name) as RadioButtonList;
-        //                if (rblControl != null && model.fields.ContainsKey(modelt1.name))
-        //                {
-        //                    rblControl.SelectedValue = model.fields[modelt1.name];
-        //                }
-        //                break;
-        //            case "multi-checkbox": //多项多选
-        //                CheckBoxList cblControl = FindControl("field_control_" + modelt1.name) as CheckBoxList;
-        //                if (cblControl != null && model.fields.ContainsKey(modelt1.name))
-        //                {
-        //                    string[] valArr = model.fields[modelt1.name].Split(',');
-        //                    for (int i = 0; i < cblControl.Items.Count; i++)
-        //                    {
-        //                        cblControl.Items[i].Selected = false; //先取消默认的选中
-        //                        foreach (string str in valArr)
-        //                        {
-        //                            if (cblControl.Items[i].Value == str)
-        //                            {
-        //                                cblControl.Items[i].Selected = true;
-        //                            }
-        //                        }
-        //                    }
-        //                }
-        //                break;
-        //        }
-        //    }
-        //    //绑定图片相册
-        //    if (filename.StartsWith("thumb_"))
-        //    {
-        //        hidFocusPhoto.Value = model.img_url; //封面图片
-        //    }
-        //    rptAlbumList.DataSource = model.albums;
-        //    rptAlbumList.DataBind();
-        //    //绑定内容附件
-        //    rptAttachList.DataSource = model.attach;
-        //    rptAttachList.DataBind();
-        //    //赋值用户组价格
-        //    if (model.group_price != null)
-        //    {
-        //        for (int i = 0; i < this.rptPrice.Items.Count; i++)
-        //        {
-        //            int hideId = Convert.ToInt32(((HiddenField)this.rptPrice.Items[i].FindControl("hideGroupId")).Value);
-        //            foreach (Model.user_group_price modelt in model.group_price)
-        //            {
-        //                if (hideId == modelt.group_id)
-        //                {
-        //                    ((HiddenField)this.rptPrice.Items[i].FindControl("hidePriceId")).Value = modelt.id.ToString();
-        //                    ((TextBox)this.rptPrice.Items[i].FindControl("txtGroupPrice")).Text = modelt.price.ToString();
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
+            txtAddTime.Text = model.add_time.ToString("yyyy-MM-dd HH:mm:ss");
+            
+           
+            //绑定图片相册
+            if (filename.StartsWith("thumb_"))
+            {
+                hidFocusPhoto.Value = model.img_url; //封面图片
+            }
+            rptAlbumList.DataSource = model.albums;
+            rptAlbumList.DataBind();
+            //绑定内容附件
+            rptAttachList.DataSource = model.attach;
+            rptAttachList.DataBind();
+            //赋值用户组价格
+            if (model.group_price != null)
+            {
+                for (int i = 0; i < this.rptPrice.Items.Count; i++)
+                {
+                    int hideId = Convert.ToInt32(((HiddenField)this.rptPrice.Items[i].FindControl("hideGroupId")).Value);
+                    foreach (Model.user_group_price modelt in model.group_price)
+                    {
+                        if (hideId == modelt.group_id)
+                        {
+                            ((HiddenField)this.rptPrice.Items[i].FindControl("hidePriceId")).Value = modelt.id.ToString();
+                            ((TextBox)this.rptPrice.Items[i].FindControl("txtGroupPrice")).Text = modelt.price.ToString();
+                        }
+                    }
+                }
+            }
+        }
         #endregion
 
         #region 绑定会员组===============================
